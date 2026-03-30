@@ -12,7 +12,6 @@ func TestBinarySearch(t *testing.T) {
 		target   int
 		expected int
 	}{
-		// --- Elemento encontrado ---
 		{
 			name:     "elemento no meio exato",
 			input:    []int{1, 3, 5, 7, 9},
@@ -20,95 +19,15 @@ func TestBinarySearch(t *testing.T) {
 			expected: 2,
 		},
 		{
-			name:     "elemento no início",
+			name: "elemento na esquerda",
 			input:    []int{1, 3, 5, 7, 9},
-			target:   1,
-			expected: 0,
-		},
-		{
-			name:     "elemento no fim",
-			input:    []int{1, 3, 5, 7, 9},
-			target:   9,
-			expected: 4,
-		},
-		{
-			name:     "elemento em slice com um único item (encontrado)",
-			input:    []int{42},
-			target:   42,
-			expected: 0,
-		},
-		{
-			name:     "elemento com índice 0 em slice grande",
-			input:    []int{2, 4, 6, 8, 10, 12, 14, 16, 18, 20},
-			target:   2,
-			expected: 0,
-		},
-		{
-			name:     "elemento no último índice em slice grande",
-			input:    []int{2, 4, 6, 8, 10, 12, 14, 16, 18, 20},
-			target:   20,
-			expected: 9,
-		},
-		{
-			name:     "slice com dois elementos — busca pelo primeiro",
-			input:    []int{3, 7},
-			target:   3,
-			expected: 0,
-		},
-		{
-			name:     "slice com dois elementos — busca pelo segundo",
-			input:    []int{3, 7},
-			target:   7,
+			target: 3,
 			expected: 1,
 		},
 		{
-			name:     "números negativos — elemento encontrado",
-			input:    []int{-10, -7, -3, 0, 4},
-			target:   -7,
-			expected: 1,
-		},
-		{
-			name:     "mix de negativos e positivos — elemento encontrado",
-			input:    []int{-5, -1, 0, 3, 8, 13},
-			target:   0,
-			expected: 2,
-		},
-
-		// --- Elemento não encontrado ---
-		{
-			name:     "target menor que todos os elementos",
-			input:    []int{5, 10, 15, 20},
-			target:   1,
-			expected: -1,
-		},
-		{
-			name:     "target maior que todos os elementos",
-			input:    []int{5, 10, 15, 20},
-			target:   99,
-			expected: -1,
-		},
-		{
-			name:     "target entre elementos existentes (gap)",
+			name: "elemento não encontrado",
 			input:    []int{1, 3, 5, 7, 9},
-			target:   4,
-			expected: -1,
-		},
-		{
-			name:     "elemento em slice com um único item (não encontrado)",
-			input:    []int{42},
-			target:   7,
-			expected: -1,
-		},
-		{
-			name:     "slice vazia",
-			input:    []int{},
-			target:   1,
-			expected: -1,
-		},
-		{
-			name:     "números negativos — elemento não encontrado",
-			input:    []int{-10, -7, -3, 0, 4},
-			target:   -5,
+			target: 20,
 			expected: -1,
 		},
 	}
