@@ -10,3 +10,6 @@ branch_coverage:
 
 test_benchmark:
 	go test -bench=. ./...
+
+clean_cache:
+	go clean -testcache
